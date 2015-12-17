@@ -1,7 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: gpnissar
- * Date: 2015-12-16
- * Time: 19:47
- */
+$menu_data = array(
+    'Accueil' => 'index.php',
+    'Contact' => 'contact.php',
+);
+
+//foreach
+
+?>
+<ul>
+<!--    modèle-->
+<!--<li><a href="index.php">Accueil</a></li>
+-->
+</ul>
