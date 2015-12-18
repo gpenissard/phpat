@@ -1,6 +1,8 @@
 <?php ?>
 
-<?php if(true) { ?>
+<?php if ( ! $site_data[USER_IS_LOGGED] ) {
+    // Si l'utilisateur n'est pas connecté
+    ?>
     <form id="login" name="login">
         <label for="username">Pseudo : </label>
         <input type="text" name="username" id="username" value="" />
@@ -8,7 +10,7 @@
         <input type="password" name="password" id="password" />
         <input type="submit" name="dologin" id="dologin" value="Entrer"/>
     </form>
-<?php } else { ?>
+<?php } else { // Si l'utilisateur est connecté ?>
     <form id="logout" name="logout">
         <input type="submit" name="dologout" id="dologout" value="Quitter"/>
     </form>
