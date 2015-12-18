@@ -2,13 +2,16 @@
 $menu_data = array(
     'Accueil' => 'index.php',
     'Contact' => 'contact.php',
+    'Dashboard' => 'dashboard.php',
+    'Inscription' => 'inscription.php',
 );
-
-//foreach
-
 ?>
+
+
 <ul>
-<!--    modèle-->
-<!--<li><a href="index.php">Accueil</a></li>
--->
+    <?php
+    foreach($menu_data as $name => $link) {
+        echo "<li><a href=\"$link\">$name</a></li>";
+    }
+    ?>
 </ul>
