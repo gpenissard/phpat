@@ -4,7 +4,6 @@ require_once 'data/_main_data.php';
 require_once 'db/_talkmsg_data.php';
 $site_data[PAGE_ID] = 'dashboard';
 require_once 'view_parts/_page_base.php';
-
 ?>
 
 <div id="main">
