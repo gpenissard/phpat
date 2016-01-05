@@ -1,5 +1,6 @@
 <?php
 var_dump($_POST); // Inspecter les données POST
+$in_post = array_key_exists('register', $_POST); // En est en réception
 /**
  * Validation du prenom
  */
@@ -66,7 +67,9 @@ if ($prenom_ok && $nom_ok && $courriel_ok && $pseudo_ok && $mot_passe_ok) {
 ?>
 <form id="inscription" name="inscription" xmlns="http://www.w3.org/1999/html" method="post">
     <label for="prenom">Prénom : </label>
-    <input type="text" name="prenom" id="prenom" value="<?php echo array_key_exists('prenom', $_POST) ? $_POST['prenom'] : '' ?>"/>
+    <input type="text" name="prenom" id="prenom"
+           class="<?php echo $in_post && ! $prenom_ok ? 'error' : '';?>"
+           value="<?php echo array_key_exists('prenom', $_POST) ? $_POST['prenom'] : '' ?>"/>
     <label for="nom">Nom : </label>
     <input type="nom" name="nom" id="nom" value="<?php echo array_key_exists('nom', $_POST) ? $_POST['nom'] : '' ?>"/>
     <label for="courriel">Courriel : </label>
@@ -75,5 +78,5 @@ if ($prenom_ok && $nom_ok && $courriel_ok && $pseudo_ok && $mot_passe_ok) {
     <input type="pseudo" name="pseudo" id="pseudo" value="<?php echo array_key_exists('pseudo', $_POST) ? $_POST['pseudo'] : '' ?>"/>
     <label for="mot_passe">Password : </label>
     <input type="mot_passe" name="mot_passe" id="mot_passe" value="<?php echo array_key_exists('mot_passe', $_POST) ? $_POST['mot_passe'] : '' ?>"/>
-    <input type="submit" name="dologin" id="dologin" value="S'inscrire"/>
+    <input type="submit" name="register" id="register" value="S'inscrire"/>
 </form>

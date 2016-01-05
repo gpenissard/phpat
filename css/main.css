@@ -18,3 +18,7 @@
 .tmsg_body {
 
 }
+
+form[name="inscription"] .error {
+    background-color: coral;
+}
