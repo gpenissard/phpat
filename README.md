@@ -14,3 +14,9 @@ Réaliser la validation du formulaire de la page d'inscription (inscription.php)
       * coloration css
       * information sur les critères à proximité des champs invalides
   * À l'inverse, si tous les  champs sont valides, rediriger vers la page d'accueil (index.php);
+
+
+## Etape pour le mercredi 6 janvier 2016
+Conclure la validation du formulaire de la page d'inscription. 
+1. Mettre une classe css error sur tous les champs invalides (seulement en réception des données)
+2. Pour chaque champ invalide, ajouter un span avec un message d'explication après le input invalide.

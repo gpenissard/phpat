@@ -5,12 +5,17 @@ $in_post = array_key_exists('register', $_POST); // En est en réception
  * Validation du prenom
  */
 $prenom_ok = false;
+$prenom_msg = ''; // Message de feedback validation, affiché si non vide
 if (array_key_exists('prenom', $_POST)) {
     $prenom = filter_input(INPUT_POST, 'prenom', FILTER_SANITIZE_STRING);
     // Validation du prenom : min 2 caractères
     $prenom_ok = (1 === preg_match('/^[A-Za-z]{2,}$/', $prenom));
+    if ( ! $prenom_ok) { // Si le prénom n'est pas valide
+        $prenom_msg = 'Le prénom ne doit contenir que des lettres (min 2).';
+    }
     var_dump($prenom);
     var_dump($prenom_ok);
+    var_dump($prenom_msg);
 }
 /**
  * Validation du nom
