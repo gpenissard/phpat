@@ -8,5 +8,6 @@ define('PHPAT_DB_TB_USER', 'user');
 define('PHPAT_DB_TB_USERCNX', 'user_cnx');
 define('COLON_CAR', ':');
 define('ACCENT_GRAVE_CAR', '`');
+
 //define('LIKE_OP', 'LIKE');
 ?>
