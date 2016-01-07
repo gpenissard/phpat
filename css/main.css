@@ -20,5 +20,11 @@
 }
 
 form[name="inscription"] .error {
-    background-color: coral;
+    background-color: #fac040;
+}
+
+form[name="inscription"] .error_msg {
+    margin-top : 2px;
+    margin-bottom : 2px;
+    background-color: #fac040;
 }
