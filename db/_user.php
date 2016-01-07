@@ -113,7 +113,7 @@ function user_authenticate($username, $password) {
 		$user_data = $sth->fetch(PDO::FETCH_ASSOC);
         // Test de validité du mot de passe
         if (passwd_check($password, $user_data[USER_TB_COL_PASSWORD_HASH])) {
-            var_dump($user_data);
+//            var_dump($user_data);
             // Retirer le hash des valeurs retournées
             unset($user_data[USER_TB_COL_PASSWORD_HASH]);
             $resultat = $user_data;
