@@ -9,7 +9,7 @@ if (array_key_exists('dologin', $_POST)
 require_once('db/_user.php');
 $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
 $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-if ($auth = user_authenticate($username,$password)) {//authentifié
+if (user_authenticate($username,$password)) {//authentifié
     do_login($username); // Connecté
 } else {
         // TODO Gérer le bla bla de authentification invalide ici
