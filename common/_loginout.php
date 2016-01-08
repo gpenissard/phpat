@@ -1,5 +1,4 @@
 <?php
-session_start();
 define('SESS_CNX_USERNAME', 'sess_cnx_username');
 
 /**

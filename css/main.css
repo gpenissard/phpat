@@ -28,3 +28,8 @@ form[name="inscription"] .error_msg {
     margin-bottom : 2px;
     background-color: #fac040;
 }
+
+.like_msg {
+    color: #da1120;
+    font-weight: bolder;
+}
