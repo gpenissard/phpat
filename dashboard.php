@@ -23,11 +23,16 @@ if (array_key_exists(LIKE_ID, $_GET)) {
     }
     $does_like = array_key_exists($msg_id, $_SESSION[SESS_LIKES]);
     if ($does_like) {
-        // On supprime l'élément à cet id
-        unset($_SESSION[SESS_LIKES][$msg_id]);
+        if ($_SESSION[SESS_LIKES][$msg_id] < 5) {
+            // On incrémente le compteur
+            $_SESSION[SESS_LIKES][$msg_id] = $_SESSION[SESS_LIKES][$msg_id] + 1 ;
+        } else {
+            // On supprime l'élément à cet id
+            unset($_SESSION[SESS_LIKES][$msg_id]);
+        }
     } else {
-        // On créée un élément pour cet id
-        $_SESSION[SESS_LIKES][$msg_id]= true;
+        // On créée un élément pour cet id avec 1 like
+        $_SESSION[SESS_LIKES][$msg_id]= 1;
     }
     // Il faut se débarrasser du paramètre de queryString
     // On redirige vers la même page sans query string
@@ -48,7 +53,7 @@ if (array_key_exists(LIKE_ID, $_GET)) {
                     <a
                         href="?<?php echo LIKE_ID . '=' . $msg_id ?>"
                         class="<?php echo $he_likes_msg ? 'like_msg' : ''?>"
-                    ><?php echo $he_likes_msg ? 'Unlike' : 'Like'; ?></a>
+                    ><?php echo $he_likes_msg ? 'You like it ' . $_SESSION[SESS_LIKES][$msg_id] . ' times' : 'Like'; ?></a>
                 </div>
                 <p class="tmsg_body"><?php echo $tmsg['tmsg_body'] ?></p>
             </li>
